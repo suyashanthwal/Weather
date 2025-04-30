@@ -9,45 +9,135 @@ body {
     color: white;
 }
 
+h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 1.3rem;
+    margin: 12px 0 8px 0;
+}
+input, button {
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+#weather {
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+#weather.show {
+    opacity: 1;
+}
+
 .container {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 350px;
+    margin: 30px auto;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#weatherIcon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    display: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    background: transparent;
+    transition: opacity 0.4s, transform 0.4s;
+    opacity: 0;
+}
+
+#weatherIcon.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 2.3rem;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 input {
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
-    margin-top: 20px;
-    width: 80%;
+    margin-top: 10px;
+    width: 90%;
+    font-size: 1rem;
+    margin-bottom: 15px;
 }
 
 button {
-    padding: 10px 20px;
-    margin-top: 20px;
+    padding: 12px 25px;
+    margin-bottom: 15px;
     border: none;
     border-radius: 5px;
     background-color: #3498db;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
     background-color: #2980b9;
+    transform: scale(1.04);
 }
 
 #weather {
-    margin-top: 30px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
-h1, h2 {
+#weather.show {
+    opacity: 1;
+}
+
+h2 {
     margin: 0;
+    font-size: 1.3rem;
 }
 
 p {
-    margin: 5px 0;
+    margin: 6px 0;
+    font-size: 1rem;
+}
+
+.animated-icon {
+    animation: bounce 1.5s infinite alternate;
+}
+@keyframes bounce {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-10px);}
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.04);
+}
+input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #3498db;
+}
+
+body.clear {
+    background: linear-gradient(135deg, #f9d423, #ff4e50);
+}
+body.rain {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+}
+body.snow {
+    background: linear-gradient(135deg, #83a4d4, #b6fbff);
 }
